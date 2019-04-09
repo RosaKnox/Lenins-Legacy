@@ -1,18 +1,323 @@
-focus_tree = {
-	id = soviet_focus
+focus_tree = { 
+country = SOV 
+factor = 0 
+modifier = { 
+add = 10 
+tag = SOV 
+}  
+} 
+#Focus for Form the VVS
+focus = { 
+id = SOV_formthevvs
+icon = GFX_goal_generic_build_airforce
+x = 7
+y = 1
+cost = 10
+available_if_capitulated = yes 
+ai_will_do = { 
+ 		factor = 1
+ 	} 
+completion_reward = { 
+air_experience= 10
+ } 
 
-	country = {
-		factor = 0
-		
-		modifier = {
-			add = 10
-			tag = SOV
-		}
-	}
+ } 
+
+#Focus for MIG Project
+focus = { 
+id = SOV_migproject
+icon = GFX_goal_generic_build_airforce
+x = 7
+y = 6
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = SOV_heavyfighterfocus focus = SOV_nuclearweapondeliveryprogram } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+			add_tech_bonus = {
+				name = JAP_jet_prototypes
+				bonus = 1.0
+				uses = 2
+				category = jet_technology
+			}
+ 	} 	
+
+ } 
+
+#Focus for Heavy Fighter Focus
+focus = { 
+id = SOV_heavyfighterfocus
+icon = GFX_goal_generic_CAS
+x = 9
+y = 5
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = SOV_caseffort } 
+ai_will_do = { 
+ 		factor = 1
+ 	} 
+completion_reward = { 
+add_tech_bonus = {
+				
+				technology = heavy_fighter1
+				technology = heavy_fighter2
+				technology = heavy_fighter3
+			}
+ } 
+
+ } 
+
+#Focus for CAS Effort
+focus = { 
+id = SOV_caseffort
+icon = GFX_goal_generic_air_production
+x = 9
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = SOV_fighterimprovement } 
+ai_will_do = { 
+ 		factor = 1
+ } 
+completion_reward = { 
+add_tech_bonus = {
+				name = CAS_bonus
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 1
+				category = cas_bomber
+			}
+ } 
+
+ } 
+
+#Focus for Improve Air Doctrines
+focus = { 
+id = SOV_improveairdoctrines
+icon = GFX_goal_generic_air_doctrine
+x = 7
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = SOV_fighterfocus focus = SOV_longrangeaircraft } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_tech_bonus = {
+				name =  air_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+ } 
+
+ } 
+
+#Focus for Modern Air Doctrines
+focus = { 
+id = SOV_modernairdoctrines
+icon = GFX_goal_generic_air_doctrine
+x = 7
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = SOV_improveairdoctrines } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_tech_bonus = {
+				name =  air_doc_bonus
+				bonus = 1.0
+				uses = 2
+				category = air_doctrine
+			}
+ } 
+
+ } 
+
+#Focus for Extremely Modern Doctrines
+focus = { 
+id = SOV_extremelymoderndoctrines
+icon = GFX_goal_generic_air_doctrine
+x = 7
+y = 5
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = SOV_modernairdoctrines } 
+ai_will_do = { 
+ 		factor = 1
+ 	} 
+completion_reward = { 
+add_tech_bonus = {
+				name =  air_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+ } 
+
+ } 
+
+#Focus for Tactical Bomber Improvement
+focus = { 
+id = SOV_tacticalbomberimprovement
+icon = GFX_goal_generic_air_naval_bomber
+x = 5
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = SOV_strategicbomberimprovement } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_tech_bonus = {
+				name = bomber_bonus
+				bonus = 1.0
+				uses = 2
+category = tactical_bomber
+			}
+ } 
+
+ } 
+
+#Focus for Nuclear Weapon Delivery Program
+focus = { 
+id = SOV_nuclearweapondeliveryprogram
+icon = GFX_focus_wonderweapons
+x = 5
+y = 5
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = SOV_tacticalbomberimprovement } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_tech_bonus = {
+				name = nuclear_bonus
+				ahead_reduction = 1
+				category = nuclear
+			}
+ } 
 	
-	default = no
+ } 
 
-	focus = {
+#Focus for Fighter Improvement
+focus = { 
+id = SOV_fighterimprovement
+icon = GFX_goal_generic_air_fighter2
+x = 9
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = SOV_fighterfocus }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_tech_bonus = {
+				name = fighter_bonus
+				bonus = 1.0
+				uses = 2
+				technology = early_fighter
+				technology = fighter1
+				technology = fighter2
+				technology = fighter3
+				technology = heavy_fighter1
+				technology = heavy_fighter2
+				technology = heavy_fighter3
+			}
+ } 
+
+ } 
+
+#Focus for Fighter Focus
+focus = { 
+id = SOV_fighterfocus
+icon = GFX_goal_generic_air_fighter2
+x = 9
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = SOV_formthevvs } 
+mutually_exclusive = { focus = SOV_longrangeaircraft } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+dd_tech_bonus = {
+				name = fighter_bonus
+				bonus = 1.0
+				uses = 2
+				technology = early_fighter
+				technology = fighter1
+				technology = fighter2
+				technology = fighter3
+				technology = heavy_fighter1
+				technology = heavy_fighter2
+				technology = heavy_fighter3
+			}
+ } 
+
+ } 
+
+#Focus for Long Range Aircraft
+focus = { 
+id = SOV_longrangeaircraft
+icon = GFX_goal_generic_air_fighter2
+x = 5
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = SOV_formthevvs } 
+mutually_exclusive = { focus = SOV_fighterfocus } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_tech_bonus = {
+				name = bomber_bonus
+				bonus = 1.0
+				uses = 2
+				technology = strategic_bomber1
+				technology = strategic_bomber2
+				technology = strategic_bomber3
+				category = tactical_bomber
+			}
+ } 
+
+ } 
+
+#Focus for Strategic Bomber Improvement
+focus = { 
+id = SOV_strategicbomberimprovement
+icon = GFX_focus_usa_escort_fighters
+x = 5
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = SOV_longrangeaircraft } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_tech_bonus = {
+				name = bomber_bonus
+				bonus = 1.0
+				uses = 2
+				technology = strategic_bomber1
+				technology = strategic_bomber2
+				technology = strategic_bomber3
+}
+ } 
+
+ } 
+focus = {
 		id = SOV_finish_five_year_plan
 		icon = GFX_goal_generic_construct_civ_factory
 		x = 1
@@ -663,6 +968,7 @@ focus_tree = {
 						JAP = { has_capitulated = no }
 					}
 					AND = {
+						has_completed_focus = SOV_war_with_uk
 						ENG = { has_capitulated = no }
 					}
 					has_war = yes
@@ -727,6 +1033,7 @@ focus_tree = {
 						JAP = { has_capitulated = no }
 					}
 					AND = {
+						has_completed_focus = SOV_war_with_uk
 						ENG = { has_capitulated = no }
 					}
 					has_war = yes
@@ -828,7 +1135,7 @@ focus_tree = {
 		relative_position_id = SOV_bukharin_constitution
 		cost = 10
 		ai_will_do = {
-			factor = 1
+			factor = 20
 		}
 
 		available_if_capitulated = yes
@@ -924,6 +1231,25 @@ focus_tree = {
 					load_oob = "SOV_night_witches"
 				}
 			}
+		}
+	}
+
+	focus = {
+		id = SOV_progress_cult
+		icon = GFX_goal_generic_scientific_exchange
+		prerequisite = { focus = SOV_positive_heroism }
+		x = 0
+		y = 1
+		relative_position_id = SOV_positive_heroism
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = progress_cult_focus
 		}
 	}
 
@@ -1472,6 +1798,7 @@ focus_tree = {
 						GER = { has_capitulated = no }
 					}
 					AND = {
+						has_completed_focus = SOV_war_with_uk
 						ENG = { has_capitulated = no }
 					}
 					has_war = yes
@@ -1752,6 +2079,7 @@ focus_tree = {
 						GER = { has_capitulated = no }
 					}
 					AND = {
+						has_completed_focus = SOV_war_with_uk
 						ENG = { has_capitulated = no }
 					}
 					has_war = yes
@@ -1817,6 +2145,7 @@ focus_tree = {
 						GER = { has_capitulated = no }
 					}
 					AND = {
+						has_completed_focus = SOV_war_with_uk
 						ENG = { has_capitulated = no }
 					}
 					has_war = yes
@@ -1882,6 +2211,7 @@ focus_tree = {
 						GER = { has_capitulated = no }
 					}
 					AND = {
+						has_completed_focus = SOV_war_with_uk
 						ENG = { has_capitulated = no }
 					}
 					has_war = yes
@@ -1946,6 +2276,7 @@ focus_tree = {
 						GER = { has_capitulated = no }
 					}
 					AND = {
+						has_completed_focus = SOV_war_with_uk
 						ENG = { has_capitulated = no }
 					}
 					has_war = yes
@@ -2293,6 +2624,7 @@ focus_tree = {
 			}
 		}
 	}
+
 	focus = { 
 id = SOV_tradeinterdiction
 icon = GFX_goal_generic_navy_submarine
@@ -2513,319 +2845,6 @@ add_tech_bonus = {
 				category = fleet_in_being_tree
 			}
  } 
+ }
 
- } 
 
-#Focus for Form the VVS
-focus = { 
-id = SOV_formthevvs
-icon = GFX_goal_generic_build_airforce
-x = 8
-y = 1
-cost = 10
-available_if_capitulated = yes 
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = { 
-air_experience= 10
- } 
-
- } 
-
-#Focus for MIG Project
-focus = { 
-id = SOV_migproject
-icon = GFX_goal_generic_build_airforce
-x = 8
-y = 6
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = SOV_heavyfighterfocus focus = SOV_nuclearweapondeliveryprogram } 
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = { 
-completion_reward = {
-			add_tech_bonus = {
-				name = JAP_jet_prototypes
-				bonus = 1.0
-				uses = 2
-				category = jet_technology
-			}
- } 
-
- } 
-
-#Focus for Heavy Fighter Focus
-focus = { 
-id = SOV_heavyfighterfocus
-icon = GFX_goal_generic_CAS
-x = 10
-y = 5
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = SOV_caseffort } 
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = { 
-add_tech_bonus = {
-				
-				technology = heavy_fighter1
-				technology = heavy_fighter2
-				technology = heavy_fighter3
-			}
- } 
-
- } 
-
-#Focus for CAS Effort
-focus = { 
-id = SOV_caseffort
-icon = GFX_goal_generic_air_production
-x = 10
-y = 4
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = SOV_fighterimprovement } 
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = { 
-add_tech_bonus = {
-				name = CAS_bonus
-				bonus = 1.0
-				ahead_reduction = 2
-				uses = 1
-				category = cas_bomber
-			}
- } 
-
- } 
-
-#Focus for Improve Air Doctrines
-focus = { 
-id = SOV_improveairdoctrines
-icon = GFX_goal_generic_air_doctrine
-x = 8
-y = 3
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = SOV_fighterfocus focus = SOV_longrangeaircraft } 
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = { 
-add_tech_bonus = {
-				name =  air_doc_bonus
-				bonus = 1.0
-				uses = 1
-				category = air_doctrine
-			}
- } 
-
- } 
-
-#Focus for Modern Air Doctrines
-focus = { 
-id = SOV_modernairdoctrines
-icon = GFX_goal_generic_air_doctrine
-x = 8
-y = 4
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = SOV_improveairdoctrines } 
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = { 
-add_tech_bonus = {
-				name =  air_doc_bonus
-				bonus = 1.0
-				uses = 2
-				category = air_doctrine
-			}
- } 
-
- } 
-
-#Focus for Extremely Modern Doctrines
-focus = { 
-id = SOV_extremelymoderndoctrines
-icon = GFX_goal_generic_air_doctrine
-x = 8
-y = 5
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = SOV_modernairdoctrines } 
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = { 
-add_tech_bonus = {
-				name =  air_doc_bonus
-				bonus = 1.0
-				uses = 1
-				category = air_doctrine
-			}
- } 
-
- } 
-
-#Focus for Tactical Bomber Improvement
-focus = { 
-id = SOV_tacticalbomberimprovement
-icon = GFX_goal_generic_air_naval_bomber
-x = 6
-y = 4
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = SOV_strategicbomberimprovement } 
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = { 
-add_tech_bonus = {
-				name = bomber_bonus
-				bonus = 1.0
-				uses = 2
-category = tactical_bomber
-			}
- } 
-
- } 
-
-#Focus for Nuclear Weapon Delivery Program
-focus = { 
-id = SOV_nuclearweapondeliveryprogram
-icon = GFX_focus_wonderweapons
-x = 6
-y = 5
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = SOV_tacticalbomberimprovement } 
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = { 
-add_tech_bonus = {
-				name = nuclear_bonus
-				ahead_reduction = 1
-				category = nuclear
-			}
- } 
-
- } 
-
-#Focus for Fighter Improvement
-focus = { 
-id = SOV_fighterimprovement
-icon = GFX_goal_generic_air_fighter2
-x = 10
-y = 3
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = SOV_fighterimprovement } 
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = { 
-add_tech_bonus = {
-				name = fighter_bonus
-				bonus = 1.0
-				uses = 2
-				technology = early_fighter
-				technology = fighter1
-				technology = fighter2
-				technology = fighter3
-				technology = heavy_fighter1
-				technology = heavy_fighter2
-				technology = heavy_fighter3
-			}
- } 
-
- } 
-
-#Focus for Fighter Focus
-focus = { 
-id = SOV_fighterfocus
-icon = GFX_goal_generic_air_fighter2
-x = 10
-y = 2
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = SOV_formthevvs } 
-mutually_exclusive = { focus = SOV_longrangeaircraft } 
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = { 
-dd_tech_bonus = {
-				name = fighter_bonus
-				bonus = 1.0
-				uses = 2
-				technology = early_fighter
-				technology = fighter1
-				technology = fighter2
-				technology = fighter3
-				technology = heavy_fighter1
-				technology = heavy_fighter2
-				technology = heavy_fighter3
-			}
- } 
-
- } 
-
-#Focus for Long Range Aircraft
-focus = { 
-id = SOV_longrangeaircraft
-icon = GFX_goal_generic_air_fighter2
-x = 6
-y = 2
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = SOV_formthevvs } 
-mutually_exclusive = { focus = SOV_fighterfocus } 
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = { 
-add_tech_bonus = {
-				name = bomber_bonus
-				bonus = 1.0
-				uses = 2
-				technology = strategic_bomber1
-				technology = strategic_bomber2
-				technology = strategic_bomber3
-				category = tactical_bomber
-			}
- } 
-
- } 
-
-#Focus for Strategic Bomber Improvement
-focus = { 
-id = SOV_strategicbomberimprovement
-icon = GFX_focus_usa_escort_fighters
-x = 6
-y = 3
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = SOV_longrangeaircraft } 
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = { 
-add_tech_bonus = {
-				name = bomber_bonus
-				bonus = 1.0
-				uses = 2
-				technology = strategic_bomber1
-				technology = strategic_bomber2
-				technology = strategic_bomber3
-}
- } 
-
- } 
-	### END BRANCH ###
