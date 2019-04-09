@@ -1790,9 +1790,6 @@ focus_tree = {
 
 			modifier = {
 				factor = 0
-				OR = {
-					GER = { has_completed_focus = GER_reestablish_free_elections }
-				}
 			}
 		}
 		completion_reward = {

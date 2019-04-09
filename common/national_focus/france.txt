@@ -1261,7 +1261,6 @@ focus_tree = {
 			modifier = {
 				factor = 40
 				NOT = { GER = { has_completed_focus = GER_rhineland } }
-				NOT = { GER = { has_completed_focus = GER_reestablish_free_elections } }
 			}
 		}
 		completion_reward = {
@@ -1291,7 +1290,6 @@ focus_tree = {
 			factor = 20
 			modifier = {
 				factor = 20
-				GER = { has_completed_focus = GER_reestablish_free_elections }
 			}
 		}
 
@@ -1470,7 +1468,6 @@ focus_tree = {
 			modifier = {
 				factor = 0
 				NOT = { GER = { has_completed_focus = GER_rhineland } }
-				NOT = { GER = { has_completed_focus = GER_reestablish_free_elections } }
 				NOT = { GER = { has_completed_focus = GER_focus_on_the_true_enemy } }
 			}
 		}
@@ -1776,7 +1773,6 @@ focus_tree = {
 			}
 			modifier = {
 				factor = 100
-				GER = { has_completed_focus = GER_reestablish_free_elections }
 			}
 		}
 		completion_reward = {
@@ -2019,7 +2015,6 @@ focus_tree = {
 			factor = 1
 			modifier = {
 				factor = 10
-				GER = { has_completed_focus = GER_reestablish_free_elections }
 			}
 		}
 		completion_reward = {
@@ -2222,9 +2217,6 @@ focus_tree = {
 					}
 				}
 	 			if = {
-	 				limit = {
-	 					GER = { has_completed_focus = GER_reestablish_free_elections }
-	 				}
 	 				random_other_country = {
 	 					limit = {
 	 						original_tag = SPR
