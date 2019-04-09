@@ -88,34 +88,6 @@ if = {
 		extensive_conscription
 	}
 
-	#purge stuff
-	unlock_national_focus = SOV_great_purge
-	remove_ideas = trotskyite_plot
-	add_ideas = RAJ_agrarian_society
-	set_stability = 0.75
-	add_timed_idea = {
-		idea = officers_purged_6
-		days = 730
-	}
-	country_event = { id = soviet.42 days = 146 }
-	set_country_flag = purged_party_members
-	set_country_flag = purge_1_group_a
-	remove_ideas = mikhail_tukhachevsky
-	remove_unit_leader = 401
-	remove_ideas = alexander_yegorov
-	remove_ideas = vasily_blucher
-	remove_ideas = pyotr_smirnov
-	remove_ideas = mikhail_frinovsky
-	set_country_flag = purge_2_group_a
-	remove_ideas = SOV_nikolai_yezhov
-	remove_ideas = yakov_smushkevich
-	remove_ideas = pavel_rychagov
-	remove_ideas = gordey_levchenko
-	remove_unit_leader = 406
-	remove_ideas = alexander_novikov
-	set_global_flag = SOV_fourth_international_fired #news happened 1938
-	#purge stuff end
-
 	#MR pact stuff
 	add_opinion_modifier = { target = GER modifier = MR_pact }# pact 
 	set_global_flag = sov_yes_pact
