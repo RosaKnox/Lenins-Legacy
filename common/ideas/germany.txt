@@ -596,24 +596,6 @@ ideas = {
 			}
 		}
 
-		GER_expatriate_the_communists = {
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				has_government = neutrality
-			}
-
-			removal_cost = -1
-
-			picture = anti_soviet_pact
-
-			modifier = {
-				communism_drift = -0.1
-			}
-		}
-
 		GER_communist_refugees = {
 			allowed = {
 				always = no

@@ -5838,7 +5838,6 @@ focus_tree = {
 		icon = GFX_goal_generic_occupy_states_coastal
 		prerequisite = { focus = GER_return_of_the_kaiser }
 		prerequisite = { focus = GER_naval_effort }
-		mutually_exclusive = { focus = GER_expatriate_the_communists }
 		available = {
 			is_puppet = no
 		}
