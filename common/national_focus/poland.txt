@@ -1841,7 +1841,6 @@ focus_tree = {
 						JAP = { has_capitulated = no }
 					}
 					AND = {
-						has_completed_focus = SOV_war_with_uk
 						ENG = { has_capitulated = no }
 					}
 					has_war = yes
