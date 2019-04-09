@@ -4591,7 +4591,7 @@ focus_tree = {
 		id = GER_plan_z
 		icon = GFX_goal_generic_navy_battleship
 		prerequisite = { focus = GER_naval_effort }
-		mutually_exclusive = { focus = GER_u_boat_effort focus = GER_rebuild_the_high_seas_fleet focus = GER_accept_british_naval_dominance }
+		mutually_exclusive = { focus = GER_u_boat_effort }
 		x = -1
 		y = 3
 		relative_position_id = GER_naval_effort
@@ -4679,7 +4679,7 @@ focus_tree = {
 		id = GER_u_boat_effort
 		icon = GFX_goal_generic_navy_submarine
 		prerequisite = { focus = GER_naval_effort }
-		mutually_exclusive = { focus = GER_plan_z focus = GER_rebuild_the_high_seas_fleet focus = GER_accept_british_naval_dominance }
+		mutually_exclusive = { focus = GER_plan_z }
 		x = 1
 		y = 3
 		relative_position_id = GER_naval_effort

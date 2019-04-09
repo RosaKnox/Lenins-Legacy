@@ -540,26 +540,6 @@ ideas = {
 			}
 		}
 
-		GER_rebuild_the_high_seas_fleet = {
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				has_government = neutrality
-			}
-
-			removal_cost = -1
-
-			picture = generic_navy_bonus
-
-			equipment_bonus = {
-				ship_hull_heavy = {
-					build_cost_ic = -0.1 instant = yes
-				}
-			}
-		}
-
 		GER_prepare_for_the_next_blockade = {
 			allowed = {
 				always = no

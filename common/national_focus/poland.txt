@@ -1747,7 +1747,6 @@ focus_tree = {
 		}
 		icon = GFX_focus_prc_agrarian_socialism
 		prerequisite = { focus = POL_polish_militarism }
-		mutually_exclusive = { focus = POL_internationalism }
 
 		x = 0
 		y = 2
