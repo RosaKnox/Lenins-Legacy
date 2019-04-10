@@ -1,0 +1,136 @@
+focus_tree = {
+	id = usa
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = USA
+		}
+	}
+	default = no
+	focus = {
+		id = USA_greaterdeal
+		text = USA_greaterdeal
+		icon = GFX_goal_support_communism
+		cost = 10.00
+		x = 1
+		y = 0
+
+	}
+	focus = {
+		id = USA_nodeal
+		text = USA_nodeal
+		icon = GFX_goal_support_fascism
+		cost = 10.00
+		mutually_exclusive = {
+			focus = USA_greaterdeal
+		}
+		x = 6
+		y = 0
+
+	}
+	focus = {
+		id = USA_expandwpa
+		text = USA_expandwpa
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = USA_greaterdeal
+		}
+		x = -1
+		y = 1
+		relative_position_id = USA_greaterdeal
+
+	}
+	focus = {
+		id = USA_tvainvestment
+		text = USA_tvainvestment
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = USA_expandwpa
+		}
+		x = 0
+		y = 1
+		relative_position_id = USA_expandwpa
+
+	}
+	focus = {
+		id = USA_fairlaboract
+		text = USA_fairlaboract
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = USA_greaterdeal
+		}
+		x = 1
+		y = 1
+		relative_position_id = USA_greaterdeal
+
+	}
+	focus = {
+		id = USA_publichousing
+		text = USA_publichousing
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = USA_fairlaboract
+		}
+		x = 0
+		y = 1
+		relative_position_id = USA_fairlaboract
+
+	}
+	focus = {
+		id = USA_privatiseinfrastructure
+		text = USA_privatiseinfrastructure
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = USA_nodeal
+		}
+		x = -1
+		y = 1
+		relative_position_id = USA_nodeal
+
+	}
+	focus = {
+		id = USA_militaryfactories
+		text = USA_militaryfactories
+		icon = GFX_focus_generic_industry_1
+		cost = 10.00
+		prerequisite = {
+			focus = USA_nodeal
+		}
+		x = 1
+		y = 1
+		relative_position_id = USA_nodeal
+
+	}
+	focus = {
+		id = USA_privatecompanies
+		text = USA_privatecompanies
+		icon = GFX_focus_mex_privatisation
+		cost = 10.00
+		prerequisite = {
+			focus = USA_privatiseinfrastructure
+		}
+		x = 0
+		y = 1
+		relative_position_id = USA_privatiseinfrastructure
+
+	}
+	focus = {
+		id = USA_milindustrialcomplex
+		text = USA_milindustrialcomplex
+		icon = GFX_focus_generic_combined_arms
+		cost = 10.00
+		prerequisite = {
+			focus = USA_militaryfactories
+		}
+		x = 0
+		y = 1
+		relative_position_id = USA_militaryfactories
+
+	}
+}
